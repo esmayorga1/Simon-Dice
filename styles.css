@@ -4,7 +4,10 @@
 }
 body {
   margin: 0;
-  background: #dedede;
+  background: url(./imganes/fondo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -13,7 +16,7 @@ body {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template: auto auto auto / 1fr;
+  grid-template: 21% auto auto / 1fr;
   grid-template-areas: "header"
                        "areaJuego"
                        "niveles";
@@ -25,11 +28,11 @@ body {
   grid-area: header;
   /* color: red; */
   font-family: 'Press Start 2P', cursive; 
-  /* padding: .8em; */
+  padding: .8em;
   display: flex;
   
-  flex-direction: column;
-  height: 40%;
+  /* flex-direction: column; */
+  /* height: 40%; */
   margin: 0 auto;
   text-align: center;
   /* border: 1px solid red; */
@@ -39,7 +42,7 @@ body {
   padding: .7em .1em;
   border-radius: 1em;
   background: #2d2d2dea;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   position: relative;
   z-index: 5;
@@ -48,7 +51,7 @@ body {
   content: url(./imganes/bola.png);
   position: absolute;
     z-index: 4;
-    top: -11%;
+    top: -8.5%;
     left: 22%;
     transform: scale(.4)translateX(120%);
 }
@@ -56,7 +59,7 @@ body {
   content: url(./imganes/bola.png);
   position: absolute;
   z-index: 4;
-  top: -11%;
+  top: -8.5%;
   left: 42%;
   transform: scale(.4)translateX(120%);
 }
@@ -69,9 +72,29 @@ body {
 }
 .areaJuego{
   grid-area: areaJuego;
+  /* border: red 1px solid; */
+  width: 40%;
+  height: 400px;
+  margin: 0 auto;
 }
 .niveles{
   grid-area: niveles;
+  /* border: red 1px solid; */
+  width: 50%;
+  height: 5em;
+  /* height: 400px; */
+  margin: 0 auto;
+
+  display: grid;
+  grid-template: 1fr / repeat(10, 1fr)
+}
+.nivel{
+  background: url(./imganes/estrella.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  margin: .3em;
+  cursor: pointer;
 }
 .gameboard {
   height: 100vh;
