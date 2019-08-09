@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  background: #dedede;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.CONTAINER{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: auto auto auto / 1fr;
+  grid-template-areas: "header"
+                       "areaJuego"
+                       "niveles";
+
+}
+
+.header{
+
+  grid-area: header;
+  /* color: red; */
+  font-family: 'Press Start 2P', cursive; 
+  /* padding: .8em; */
+  display: flex;
+  
+  flex-direction: column;
+  height: 40%;
+  margin: 0 auto;
+  text-align: center;
+  /* border: 1px solid red; */
+}
+.screen{
+  color: #e6e6e6;
+  padding: .7em .1em;
+  border-radius: 1em;
+  background: #2d2d2dea;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+.header .bolas::before{
+  content: url(./imganes/bola.png);
+  position: absolute;
+    z-index: 4;
+    top: -11%;
+    left: 22%;
+    transform: scale(.4)translateX(120%);
+}
+.header .bolas::after{
+  content: url(./imganes/bola.png);
+  position: absolute;
+  z-index: 4;
+  top: -11%;
+  left: 42%;
+  transform: scale(.4)translateX(120%);
+}
+.header p {
+  color: #8ac149;
+  font-size: 3em;
+  margin:  auto;
+  margin-top:.3em;
+
+}
+.areaJuego{
+  grid-area: areaJuego;
+}
+.niveles{
+  grid-area: niveles;
+}
+.gameboard {
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  max-height: 60vh;
+  max-width: 60vh;
+}
+
+.color {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: left;
+}
+
+.celeste {
+  background: #22a6b3;
+}
+
+.celeste.light {
+  background: #7ed6df;
+}
+
+.violeta {
+  background: #be2edd;
+}
+
+.violeta.light {
+  background: #e056fd;
+}
+
+.naranja {
+  background: #f0932b;
+}
+
+.naranja.light {
+  background: #ffbe76;
+}
+
+.verde {
+  background: #6ab04c;
+}
+
+.verde.light {
+  background: #badc58;
+}
+
+.btn-start {
+  width: 400px;
+  height: 100px;
+  background: #ecf0f1;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 200px);
+}
+
+.hide {
+  display: none;
+}
