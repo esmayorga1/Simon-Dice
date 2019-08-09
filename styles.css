@@ -11,6 +11,7 @@ body {
   display: flex;
   align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 .CONTAINER{
   width: 100%;
@@ -47,6 +48,9 @@ body {
   position: relative;
   z-index: 5;
 }
+.bolas{
+  display: none;
+}
 .header .bolas::before{
   content: url(./imganes/bola.png);
   position: absolute;
@@ -54,6 +58,7 @@ body {
     top: -8.5%;
     left: 22%;
     transform: scale(.4)translateX(120%);
+    
 }
 .header .bolas::after{
   content: url(./imganes/bola.png);
@@ -78,6 +83,7 @@ body {
   margin: 0 auto;
 }
 .niveles{
+  
   grid-area: niveles;
   /* border: red 1px solid; */
   width: 50%;
@@ -105,6 +111,30 @@ body {
   max-height: 60vh;
   max-width: 60vh;
 }
+.btn_empezar{
+  padding: 1.5em;
+  display: block;
+  /* height: 2em; */
+  font-size: 1.5em;
+  background: #dcddd8;
+  border: #2d2d2d solid 2px;
+  border-radius: 1.5em;
+  position: absolute;
+  margin: auto;
+  visibility: 1;
+  line-height: top;
+  line-height: 1.9em;
+  top: 42%;
+    left: 43%;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+.btn_empezar:active{
+  transform: scale(.9)
+}
+
 
 .color {
   width: 50%;
@@ -164,5 +194,16 @@ body {
 }
 
 .hide {
-  display: none;
+ opacity: 0;
+}
+@media screen and (max-width: 1024px){
+  
+.areaJuego {
+  grid-area: areaJuego;
+  /* border: red 1px solid; */
+  width: 40%;
+  /* height: 400px; */
+  margin: 0 auto;
+}
+
 }
