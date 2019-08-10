@@ -14,10 +14,10 @@ body {
   width: 100vw;
 }
 .CONTAINER{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template: 21% auto auto / 1fr;
+  grid-template: auto auto auto / 1fr;
   grid-template-areas: "header"
                        "areaJuego"
                        "niveles";
@@ -96,6 +96,14 @@ body {
 }
 .nivel{
   background: url(./imganes/estrella.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  margin: .3em;
+  cursor: pointer;
+}
+.nivel.completado{
+  background: url(./imganes/estrellaLlena.svg);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -203,12 +211,46 @@ body {
 }
 @media screen and (max-width: 1024px){
   
+  .CONTAINER {
+    grid-template: auto auto auto / 1fr;
+}
+.btn_empezar {
+  top: 51%;
+  left: 40%;
+}
 .areaJuego {
   grid-area: areaJuego;
   /* border: red 1px solid; */
-  width: 40%;
+  min-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* height: 400px; */
-  margin: 0 auto;
+  /* margin: auto; */
 }
 
+}
+@media screen and (max-width :768px){
+  .btn_empezar {
+    top: 52%;
+    left: 37%;
+}
+.niveles {
+  
+  transform: scale(1.8);
+  
+}
+}
+@media screen and (max-width :425px){
+  .areaJuego {
+    grid-area: areaJuego;
+    /* border: red 1px solid; */
+    width: auto;
+    /* height: 400px; */
+    margin: 0 auto;
+}
+.nivel {
+  height: 2em;
+  transform: scale(1.5);
+}
 }

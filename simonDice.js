@@ -1,4 +1,17 @@
 
+const nivelUno = document.getElementById('nivel1')
+const nivelDos = document.getElementById('nivel2')
+const nivelTres = document.getElementById('nivel3')
+const nivelCuatro = document.getElementById('nivel4')
+const nivelCinco = document.getElementById('nivel5')
+const nivelSeis = document.getElementById('nivel6')
+const nivelSiete = document.getElementById('nivel7')
+const nivelOcho = document.getElementById('nivel8')
+const nivelNueve = document.getElementById('nivel9')
+const nivelDiez = document.getElementById('nivel10')
+const claseNiveles = document.getElementsByClassName('nivel')
+const NIVELES = [nivelUno,nivelDos,nivelTres,nivelCuatro,nivelCinco,nivelSeis,nivelSiete,nivelOcho,nivelNueve,nivelDiez]
+
 const puntos = document.getElementById('puntos')
 const celeste = document.getElementById('celeste')
 const violeta = document.getElementById('violeta')
@@ -17,7 +30,7 @@ class Juego{
     this.generarSecuencia()
     setTimeout( ()=>{
       this.siguienteNivel()
-    },2000)
+    },1500)
   }
   inicializar(){
     this.elegirColor = this.elegirColor.bind(this)
@@ -109,7 +122,7 @@ class Juego{
       this.sumarPuntos()
       if(this.subnivel === this.nivel){
         this.nivel++
-        
+        this.completarNivel()
         this.giro++
         this.rotar()
         this.eliminarEventosClick()
@@ -123,9 +136,23 @@ class Juego{
       this.perdioElJuego()
     }
   }
+  completarNivel(){
+    for(let i = 0 ; i< this.nivel -1;i++){
+      NIVELES[i].classList.add('completado')
+    }
+  }
   sumarPuntos(){
     this.puntosJuego+=10
     puntos.innerHTML = this.puntosJuego
+  }
+  quitarPuntos(){
+    this.puntosJuego = 0
+    
+    puntos.innerHTML = this.puntosJuego
+    for(let i = 0 ; i < this.nivel;i++){
+
+      NIVELES[i].classList.remove('completado')
+    }
   }
   ganoElJuego(){
     swal('SimonDice','Ganaste','success')
@@ -137,6 +164,7 @@ class Juego{
   perdioElJuego(){
     swal('SimonDice','Buen intento', 'error')
     .then( ()=>{
+      this.quitarPuntos()
       this.eliminarEventosClick()
       this.inicializar()
     })
