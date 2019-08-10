@@ -110,6 +110,10 @@ body {
   margin: 0 auto;
   max-height: 60vh;
   max-width: 60vh;
+  transition: 2s;
+}
+.gameboard.rotate{
+  transform: rotate(180deg)
 }
 .btn_empezar{
   padding: 1.5em;
@@ -120,6 +124,7 @@ body {
   border: #2d2d2d solid 2px;
   border-radius: 1.5em;
   position: absolute;
+  z-index: 100;
   margin: auto;
   visibility: 1;
   line-height: top;
@@ -194,7 +199,7 @@ body {
 }
 
 .hide {
- opacity: 0;
+ display: none;
 }
 @media screen and (max-width: 1024px){
   
